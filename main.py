@@ -17,11 +17,14 @@ def root():
 
 @app.post("/items")
 def create_item(item: ItemCreate):
-    items.append(item)   # ✅ 把資料存進清單
-    return {
-        "you_sent": item
-    }
+    new_item = {
+        "id": len(items) + 1,
+        "name": item.name
+        }  
+    items.append(new_item)   # ✅ 把資料存進清單
 
+    return new_item
+    
 @app.get("/items")
 def list_items():
     return items
