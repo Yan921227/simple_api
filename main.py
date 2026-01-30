@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS items (
     name TEXT NOT NULL
 )
 """)
+#我真的確定要寫進硬碟，請保存這個動作
 conn.commit()
 
 items = []
